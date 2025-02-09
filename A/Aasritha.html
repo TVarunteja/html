@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Message for Aasritha</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .heart {
+            font-size: 40px;
+            color: red;
+            animation: heartbeat 1s infinite alternate;
+        }
+        @keyframes heartbeat {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+        .message {
+            font-size: 20px;
+            color: #ff1493;
+            white-space: pre-wrap;
+            display: inline-block;
+            border-right: 3px solid pink;
+            overflow: hidden;
+            width: 0;
+            animation: typing 5s steps(50, end) forwards, blink 0.7s infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heart">❤️ Sending Love to Aasritha ❤️</h1>
+    <p class="message"></p>
+
+    <script>
+        const message = `Dear Aasritha,
+
+You are the best sister in the world! 💖
+Your kindness, care, and support mean everything to me.
+Stay happy, keep smiling, and always shine like a star! 🌟
+
+With lots of love,
+Your Loving Sibling ❤️`;
+
+        let index = 0;
+        function typeMessage() {
+            if (index < message.length) {
+                document.querySelector(".message").innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeMessage, 50);
+            }
+        }
+        setTimeout(typeMessage, 1000);
+    </script>
+</body>
+</html>
